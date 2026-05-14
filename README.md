@@ -102,5 +102,22 @@ python3 ons_dataset_app_functions.py
 
 Any errors feel free to contact me using my github contact details.
 
+# Alternatively, if you have Python notebook already installed (e.g. Jupyter, Marimo)
 
+You can just download the ONS_consumer_price_indices.ipynb file and run it in your notebook
+
+# Sources
+
+This project was built using the following documentation and public examples as references:
+
+1. [ONS Developer Hub: Introduction](https://developer.ons.gov.uk/)  
   
+2. [ONS Digital Blog: How to access data from the ONS beta API](https://digitalblog.ons.gov.uk/2021/02/15/how-to-access-data-from-the-ons-beta-api/)
+
+3. - [David Corney GitHub Repo: How to access the ONS API via Python](https://github.com/dcorney/ons-api)
+  
+4. - [NHS England GitHub Repo: ons-api](https://github.com/nhsengland/ons-api)
+  
+5. [Streamlit Documentation: `st.download_button`](https://docs.streamlit.io/develop/api-reference/widgets/st.download_button)
+
+6. [Streamlit Documentation: Session State](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)  
