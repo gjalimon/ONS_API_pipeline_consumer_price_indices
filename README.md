@@ -12,7 +12,9 @@ Basic steps of the pipeline:
 5. Clean and Validate
 6. Save this clean version into the Processed folder
 
-Project structure
+Web App steps are the same except it provides a download links instead
+
+Project structure:
 
 ONS_API_pipeline_consumer_price_indices/
 
