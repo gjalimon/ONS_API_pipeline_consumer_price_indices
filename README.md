@@ -57,9 +57,13 @@ On this GitHub page:
 3. Unzip the downloaded file.
 4. Open the project folder on your laptop.
 5. The folder should contain:
+   
   app.py
+  
   requirements.txt
+  
   README.md
+  
   ons_dataset_app_functions.py  --> this is the file used for local Python pipeline
 
 # III. Setting up the Python pipeline
