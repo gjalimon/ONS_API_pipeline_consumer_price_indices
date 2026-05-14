@@ -13,18 +13,18 @@ Project structure
 
 ONS_API_pipeline_consumer_price_indices/
 
-├── get_ons_dataset.py
+- get_ons_dataset.py
 
-├── notebook.ipynb
+- notebook.ipynb
 
-├── requirements.txt
+- requirements.txt
 
-├── .env.example
+- .env.example
 
-├── data/
+- data/
 
-│   ├── raw/
+-----/raw/
 
-│   └── processed/
+----/ processed/
 
-└── logs/
+- logs/
