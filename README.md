@@ -1,6 +1,9 @@
 # ONS_API_pipeline_consumer_price_indices
 A small pipeline that extracts, cleans, validates and loads the latest dataset for the consumer price indices using ONS public API
 
+Click here to use the web app:
+[ONS API on Consumer Price Indices -Pipeline - web App](https://onsapipipelineconsumerpriceindices-cgcqxkbseuqgzozfdhpyjj.streamlit.app/)
+
 Basic steps of the pipeline:
 1. Reads the links.latest_version.hrefy
 2. Get the latest version URL
