@@ -48,7 +48,6 @@ Download and install Python.
 
 During installation, make sure you tick:
 
-```text
 Add Python to PATH
 
 # II. Download this repository
