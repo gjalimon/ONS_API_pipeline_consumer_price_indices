@@ -39,6 +39,31 @@ st.write(
     'it will provide the raw and processed CSV files.'
 )
 
+# Session state setup
+# Session state keeps values even when Streamlit reruns the page.
+# This stops the app from going back to the starting screen after a download click.
+
+if "result_ready" not in st.session_state:
+    st.session_state.result_ready = False
+
+if "raw_csv_bytes" not in st.session_state:
+    st.session_state.raw_csv_bytes = None
+
+if "processed_csv_bytes" not in st.session_state:
+    st.session_state.processed_csv_bytes = None
+
+if "cleaned_preview" not in st.session_state:
+    st.session_state.cleaned_preview = None
+
+if "csv_url" not in st.session_state:
+    st.session_state.csv_url = None
+
+if "timestamp" not in st.session_state:
+    st.session_state.timestamp = None
+
+if "dataset_id" not in st.session_state:
+    st.session_state.dataset_id = "cpih01"
+    
 #User Input
 #Text box where user can type an ONS dataset ID
 #The ONLY value for now is cpih01
@@ -66,44 +91,57 @@ if run_button:
             raw_df = pd.read_csv(io.BytesIO(raw_csv_bytes)) #convert raw bytes into file-like object then read as pandas df
             cleaned_df = clean_dataset(raw_df) #clean dataset using pre existing function
             validate_dataset(cleaned_df) #validate using pre exisiting function
-            processed_csv_bytes = cleanded_df.to_csv(index=False).encode("utf-8")
+            processed_csv_bytes = cleaned_df.to_csv(index=False).encode("utf-8")
             timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
 
-    #If everything worked, show success message
-    st.success('Dataset downloaded, cleaned and validated successfully.')
+            #Save everything into session state
+            st.session_state.result_ready = True
+            st.session_state.raw_csv_bytes = raw_csv_bytes
+            st.session_state.processed_csv_bytes = processed_csv_bytes
+            st.session_state.cleaned_preview = cleaned_df.head(10)
+            st.session_state.csv_url = csv_url
+            st.session_state.timestamp = timestamp
+            st.session_state.dataset_id = dataset_id
 
+        #If everything worked, show success message
+        st.success('Dataset downloaded, cleaned and validated successfully.')
+
+    #Error if something goes wrong in the streamlit app
+    except Exception as error:
+        st.session_state.result_ready = False
+        st.error("Something went wrong.")
+        st.exception(error)
+
+#Show results
+if st.session_state.result_ready:
     #Show a small preview of the processed dataset
     st.subheader('Preview of processed data')
-    st.dataframe(cleaned_df.head(10))
+    st.dataframe(st.session_state.cleaned_preview)
 
     #Create two columns so the download buttons sit side by side.
     col1, col2 = st.columns(2)
 
-    # First column: raw CSV download button
+        # First column: raw CSV download button
     with col1:
         st.download_button(
             label='Download raw CSV',
-            data= raw_csv_bytes,
-            file_name = f'{dataset_id}_{timestamp}_raw.csv',
-            name='text/csv',
+            data= st.session_state.raw_csv_bytes,
+            file_name = f'{st.session_state.dataset_id}_{st.session_state.timestamp}_raw.csv',
+            mime='text/csv',
         )
 
     # Second column: processed CSV download button
     with col2:
         st.download_button(
             label='Download processed CSV',
-            data=processed_csv_bytes,
-            file_name=f'{dataset_id}_{timestamp}_processed.csv',
+            data=st.session_state.processed_csv_bytes,
+            file_name=f'{st.session_state.dataset_id}_{st.session_state.timestamp}_processed.csv',
             mime='text/csv',
         )
 
     # Show the original ONS source CSV URL in an expandable section
     #for tranparency and debugging
     with st.expander('Source CSV URL'):
-        st.write(csv_url)
+        st.write(st.session_state.csv_url)
 
-# If anything goes wrong, show the error in the streamlit app
-    except Exception as error:
-        st.error('Something went wrong.')
-        st.exception(error)
 
