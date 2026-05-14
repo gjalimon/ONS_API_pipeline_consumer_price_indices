@@ -114,10 +114,10 @@ This project was built using the following documentation and public examples as 
   
 2. [ONS Digital Blog: How to access data from the ONS beta API](https://digitalblog.ons.gov.uk/2021/02/15/how-to-access-data-from-the-ons-beta-api/)
 
-3. - [David Corney GitHub Repo: How to access the ONS API via Python](https://github.com/dcorney/ons-api)
+3. [David Corney GitHub Repo: How to access the ONS API via Python](https://github.com/dcorney/ons-api)
   
-4. - [NHS England GitHub Repo: ons-api](https://github.com/nhsengland/ons-api)
+4. [NHS England GitHub Repo: ons-api](https://github.com/nhsengland/ons-api)
   
-5. [Streamlit Documentation: `st.download_button`](https://docs.streamlit.io/develop/api-reference/widgets/st.download_button)
+5. [Streamlit Documentation: st.download_button](https://docs.streamlit.io/develop/api-reference/widgets/st.download_button)
 
-6. [Streamlit Documentation: Session State](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)  
+6. [Streamlit Documentation: session state](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)  
