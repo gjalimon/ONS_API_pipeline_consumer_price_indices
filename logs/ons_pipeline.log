@@ -1,0 +1,87 @@
+2026-05-12 15:11:03,863 | INFO | Starting ONS pipeline.
+2026-05-12 15:11:03,866 | INFO | Dataset ID: ciph01
+2026-05-12 15:11:03,868 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/ciph01
+2026-05-12 15:11:04,006 | ERROR | HTTP error while calling ONS API: 404 Client Error: Not Found for url: https://api.beta.ons.gov.uk/v1/datasets/ciph01
+Traceback (most recent call last):
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_23172\3875865354.py", line 33, in <module>
+    main()
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_23172\3875865354.py", line 9, in main
+    latest_metadata = get_latest_version_metadata(DATASET_ID)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_23172\1014197345.py", line 7, in get_latest_version_metadata
+    dataset_metadata = get_json(dataset_url)
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_23172\2279707099.py", line 8, in get_json
+    response.raise_for_status()
+  File "C:\Users\justa\anaconda3\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.beta.ons.gov.uk/v1/datasets/ciph01
+2026-05-12 15:13:13,733 | INFO | Starting ONS pipeline.
+2026-05-12 15:13:13,738 | INFO | Dataset ID: cpih01
+2026-05-12 15:13:13,743 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01
+2026-05-12 15:13:13,855 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01/editions/time-series/versions/67
+2026-05-12 15:13:13,939 | INFO | Downloading file: https://download.ons.gov.uk/downloads/datasets/cpih01/editions/time-series/versions/67.csv
+2026-05-12 15:13:14,428 | INFO | Saved raw file: data\raw\cpih01_20260512_141313_67.csv
+2026-05-12 15:13:14,430 | INFO | Reading raw CSV with pandase.
+2026-05-12 15:13:14,529 | INFO | Starting cleaning. Original shape: (55754, 7)
+2026-05-12 15:13:14,579 | ERROR | Pipeline failed: name 'astype' is not defined
+Traceback (most recent call last):
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_4940\3875865354.py", line 33, in <module>
+    main()
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_4940\3875865354.py", line 23, in main
+    cleanded_df = clean_dataset(df)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_4940\1971388060.py", line 21, in clean_dataset
+    df[col] = df[col],astype(str).str.strip()
+                      ^^^^^^
+NameError: name 'astype' is not defined. Did you mean: 'type'?
+2026-05-12 15:15:22,493 | INFO | Starting ONS pipeline.
+2026-05-12 15:15:22,498 | INFO | Dataset ID: cpih01
+2026-05-12 15:15:22,500 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01
+2026-05-12 15:15:22,585 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01/editions/time-series/versions/67
+2026-05-12 15:15:22,700 | INFO | Downloading file: https://download.ons.gov.uk/downloads/datasets/cpih01/editions/time-series/versions/67.csv
+2026-05-12 15:15:23,152 | INFO | Saved raw file: data\raw\cpih01_20260512_141522_67.csv
+2026-05-12 15:15:23,157 | INFO | Reading raw CSV with pandase.
+2026-05-12 15:15:23,251 | INFO | Starting cleaning. Original shape: (55754, 7)
+2026-05-12 15:15:23,443 | INFO | Finised clearning. Cleaned shape: (55754, 8)
+2026-05-12 15:15:23,444 | ERROR | Pipeline failed: name 'cleaned_df' is not defined
+Traceback (most recent call last):
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_7776\3875865354.py", line 33, in <module>
+    main()
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_7776\3875865354.py", line 24, in main
+    validate_dataset(cleaned_df)
+                     ^^^^^^^^^^
+NameError: name 'cleaned_df' is not defined. Did you mean: 'cleanded_df'?
+2026-05-12 15:17:05,528 | INFO | Starting ONS pipeline.
+2026-05-12 15:17:05,533 | INFO | Dataset ID: cpih01
+2026-05-12 15:17:05,535 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01
+2026-05-12 15:17:05,677 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01/editions/time-series/versions/67
+2026-05-12 15:17:05,799 | INFO | Downloading file: https://download.ons.gov.uk/downloads/datasets/cpih01/editions/time-series/versions/67.csv
+2026-05-12 15:17:06,339 | INFO | Saved raw file: data\raw\cpih01_20260512_141705_67.csv
+2026-05-12 15:17:06,342 | INFO | Reading raw CSV with pandase.
+2026-05-12 15:17:06,456 | INFO | Starting cleaning. Original shape: (55754, 7)
+2026-05-12 15:17:06,695 | INFO | Finised cleaning. Cleaned shape: (55754, 8)
+2026-05-12 15:17:06,697 | INFO | Starting validation.
+2026-05-12 15:17:06,768 | ERROR | Pipeline failed: name 'duplicated_rows' is not defined
+Traceback (most recent call last):
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_15212\1972027006.py", line 33, in <module>
+    main()
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_15212\1972027006.py", line 24, in main
+    validate_dataset(cleaned_df)
+  File "C:\Users\justa\AppData\Local\Temp\ipykernel_15212\2071351239.py", line 16, in validate_dataset
+    if duplicated_rows > 0:
+       ^^^^^^^^^^^^^^^
+NameError: name 'duplicated_rows' is not defined. Did you mean: 'duplicate_rows'?
+2026-05-12 15:17:38,569 | INFO | Starting ONS pipeline.
+2026-05-12 15:17:38,578 | INFO | Dataset ID: cpih01
+2026-05-12 15:17:38,580 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01
+2026-05-12 15:17:38,692 | INFO | Requesting JSON: https://api.beta.ons.gov.uk/v1/datasets/cpih01/editions/time-series/versions/67
+2026-05-12 15:17:38,838 | INFO | Downloading file: https://download.ons.gov.uk/downloads/datasets/cpih01/editions/time-series/versions/67.csv
+2026-05-12 15:17:39,283 | INFO | Saved raw file: data\raw\cpih01_20260512_141738_67.csv
+2026-05-12 15:17:39,285 | INFO | Reading raw CSV with pandase.
+2026-05-12 15:17:39,384 | INFO | Starting cleaning. Original shape: (55754, 7)
+2026-05-12 15:17:39,568 | INFO | Finised cleaning. Cleaned shape: (55754, 8)
+2026-05-12 15:17:39,571 | INFO | Starting validation.
+2026-05-12 15:17:39,638 | INFO | Validation passed.
+2026-05-12 15:17:40,008 | INFO | Saved processed dataset: data\processed\cpih01_20260512_141738_clean.csv
+2026-05-12 15:17:40,010 | INFO | Pipeline complete.
