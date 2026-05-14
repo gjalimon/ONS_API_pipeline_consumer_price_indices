@@ -114,7 +114,7 @@ This project was built using the following documentation and public examples as 
   
 2. [ONS Digital Blog: How to access data from the ONS beta API](https://digitalblog.ons.gov.uk/2021/02/15/how-to-access-data-from-the-ons-beta-api/)
 
-3. [David Corney GitHub Repo: How to access the ONS API via Python](https://github.com/dcorney/ons-api)
+3. [David Corney: Accessing the ONS API](https://dcorney.com/thoughts/2021/08/04/ons-api.html)  
   
 4. [NHS England GitHub Repo: ons-api](https://github.com/nhsengland/ons-api)
   
