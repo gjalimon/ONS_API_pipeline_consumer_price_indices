@@ -69,20 +69,29 @@ On this GitHub page:
 # III. Setting up the Python pipeline
 1. Open the project folder in a terminal
 2. Install the required Python packages using this line in your terminal:
+   
 (for Windows)
+
 python -m pip install -r requirements.txt
+
 (for Mac/Linux try)
+
 python3 -m pip install -r requirements.txt
-3. In the project folder create a new 'text' file and rename it to .env
+
+4. In the project folder create a new 'text' file and rename it to .env
 4.. Inside .env file add this two lines: (This tells the script which ONS dataset to download and where to save the files)
 ONS_DATASET_ID=cpih01
 ONS_OUTPUT_DIR=data
 
 # IV. Running the Python Pipeline
 1. Run this line in still in the same terminal
+   
 (for Windows)
+
 python ons_dataset_app_functions.py
+
 (for Mac/Linux try)
+
 python3 ons_dataset_app_functions.py
 
 # V. Finding the downloaded files
