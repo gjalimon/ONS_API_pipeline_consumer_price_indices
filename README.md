@@ -12,11 +12,19 @@ Basic steps of the pipeline:
 Project structure
 
 ONS_API_pipeline_consumer_price_indices/
+
 ├── get_ons_dataset.py
+
 ├── notebook.ipynb
+
 ├── requirements.txt
+
 ├── .env.example
+
 ├── data/
+
 │   ├── raw/
+
 │   └── processed/
+
 └── logs/
